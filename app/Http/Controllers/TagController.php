@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\Tags;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,19 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with(['tags', 'images', 'user'])->get();
-        // $posts = Post::with([
-        //     'tags' => function ($query) {
-        //         $query->select('id', 'name');
-        //     }, 
-        //     'images' => function ($query) {
-        //         $query->select('id', 'url', 'post_id');
-        //     }, 
-        //     'user' => function ($query) {
-        //         $query->select('id', 'name');
-        //     }])->get(['id', 'title', 'content', 'user_id']);
-
-        return view('posts', compact('posts'));
+        //
     }
 
     /**
@@ -53,10 +41,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Tags $tags)
     {
         //
     }
@@ -64,10 +52,10 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Tags $tags)
     {
         //
     }
@@ -76,10 +64,10 @@ class PostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Post  $post
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Tags $tags)
     {
         //
     }
@@ -87,10 +75,10 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Post  $post
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Tags $tags)
     {
         //
     }
